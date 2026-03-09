@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Issues Tracker</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="./assets/github-logo.png" type="image/x-icon">
+        
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">
+       
+        <strong><i class="fa-brands fa-github"></i> GitHub Issues Tracker</strong>
+    </div>
+    <div class="nav-right">
+        <input type="text" id="searchInput" placeholder="Search issues...">
+        <button class="btn-new" onclick="searchIssues()">Search</button>
+        <button class="btn-new">+ New Issue</button>
+    </div>
+</nav>
+
+<div class="content-wrapper">
+    <div class="tabs">
+        <button class="tab-btn active" onclick="filterData('all', this)">All</button>
+        <button class="tab-btn" onclick="filterData('open', this)">Open</button>
+        <button class="tab-btn" onclick="filterData('closed', this)">Closed</button>
+    </div>
+
+    <div class="stats-header">
+        <div>
+            <h3 id="count-text">0 Issues</h3>
+            <p style="color: #666; font-size: 14px;">Track and manage your project issues</p>
+        </div>
+        <div style="font-size: 14px;">
+            <span style="color: var(--open-green)">● Open</span> &nbsp;
+            <span style="color: var(--closed-purple)">● Closed</span>
+        </div>
+    </div>
+
+    <div id="loader"> Loading Issues...</div>
+    <div class="issue-grid" id="issue-container"></div>
+</div>
+
+<div class="modal" id="issueModal">
+    <div class="modal-content" id="modalBody"></div>
+</div>
+
+<script src="script/main-page.js"></script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+:root {
+            --primary: #6366f1;
+            --open-green: #22c55e;
+            --closed-purple: #a855f7;
+            --bg-gray: #f8fafc;
+        }
+
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background: var(--bg-gray); 
+            margin: 0; 
+            padding-bottom: 50px; }
+
+
+                       
+        
+        .navbar {
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center;
+            padding: 15px 5%;
+             background: white;
+              box-shadow: 2px;
+        }
+        .nav-right { display: flex;
+             gap: 10px; }
+
+        input {
+             padding: 8px 15px;
+             border: 1px solid #ddd; 
+             border-radius: 5px;
+              width: 250px; }
+
+        .btn-new { background: var(--primary); 
+            color: white; 
+            border: none;
+             padding: 8px 15px;
+              border-radius: 5px; 
+              cursor: pointer; }
+
+
+        .content-wrapper { 
+            max-width: 1200px; 
+            margin: 30px auto;
+             padding: 0 20px; }
+
+        .tabs { 
+            display: flex; 
+            gap: 10px;
+             margin-bottom: 20px; 
+             /* justify-content: center;  */
+            }
+
+        .tab-btn { 
+            padding: 10px 25px; 
+            border: 1px solid #ddd; 
+            background: white;
+             border-radius: 5px; 
+             cursor: pointer; 
+             transition: 0.3s; }
+
+        .tab-btn.active {
+             background: var(--primary); 
+             color: white; 
+             border-color: var(--primary); }
+
+    
+        .stats-header { 
+            display: flex;
+             justify-content: space-between;
+              align-items: center; 
+            background: white; 
+            padding: 20px;
+             border: 1px dashed #ccc;
+              border-radius: 8px;
+               margin-bottom: 25px;
+        }
+
+        
+        .issue-grid { 
+            display: grid;
+             grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+              gap: 20px; }
+
+        
+        .card { 
+            background: white;
+             border-radius: 10px;
+              padding: 20px;
+               position: relative;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+             cursor: pointer;
+              transition: transform 0.2s;
+        }
+        .card:hover { transform: translateY(-5px); }
+        .card.open { border-top: 5px solid var(--open-green); }
+        .card.closed { border-top: 5px solid var(--closed-purple); }
+
+        
+        .badge { 
+            font-size: 11px; 
+            padding: 2px 8px; 
+            border-radius: 4px;
+             font-weight: bold; 
+             text-transform: uppercase; }
+
+        .p-high { background: #fee2e2; color: #ef4444; }
+        .p-medium { background: #fef3c7; color: #f59e0b; }
+        .p-low { background: #f3e8ff; color: #a855f7; }
+
+        
+        #loader { 
+            display: none; 
+            text-align: center;
+             font-size: 20px; 
+             padding: 20px; }
+
+        
+        .modal { 
+            display: none;
+             position: fixed; 
+             top: 0; 
+             left: 0; 
+             width: 100%;
+              height: 100%; 
+              background: rgba(0,0,0,0.5);
+               align-items: center;
+                justify-content: center;
+                 z-index: 100; }
+
+        .modal-content { 
+            background: white;
+             padding: 30px;
+              border-radius: 10px;
+               max-width: 500px; 
+               width: 90%; 
+               position: relative; }
+
+        .close-modal { 
+            position: absolute;
+             right: 15px;
+              top: 10px; 
+              font-size: 24px; 
+              cursor: pointer; }
+
+        
+        @media (max-width: 768px) {
+            .navbar { flex-direction: column; gap: 10px; }
+            .issue-grid { grid-template-columns: 1fr; }
+            input { width: 100%; }
+        }
+    
